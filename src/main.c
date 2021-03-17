@@ -22,7 +22,30 @@ int main(){
     switch (opt)
         {
             case 1:
-                
+                printf("\nOPÇÕES DE GERENCIAMENTO:\n");
+                printf("1 - Inserir venda\n");
+                printf("2 - Listar suas vendas\n");
+                printf("7 - Retornar ao início\n");
+
+                printf("\nEntre com o identificador desejado:");
+                scanf("%i", &opt);
+                switch (opt)
+                {
+                    case 1:
+                    
+                    break;
+
+                    case 2:
+
+                    break;
+                    
+                    case 7:
+
+                    break;
+                    
+                    default:
+                        break;
+                }
             break;
 
             case 2:
