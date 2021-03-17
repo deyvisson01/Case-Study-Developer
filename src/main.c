@@ -12,6 +12,10 @@ int main(){
     // VARIÁVEIS DO VENDEDOR
     char vendedor[50];
     int cpf;
+    
+    // VARIÁVEIS DO PRODUTO
+    char descrição_produto[50];
+    float valor_individual;
 
     printf("                                 SISTEMA DE GERENCIAMENTO DE VENDAS           \n"); 
     printf("                                         SEJA BEM-VINDO(A)!                   \n\n");
@@ -84,7 +88,7 @@ int main(){
                         printf("INSIRA OS DADOS PARA ADICIONAR UM NOVO VENDEDOR!\n");
                         
                         printf("Nome ->");
-                        scanf("%s",vendedor);
+                        scanf("%s",descrição_produto);
 
                         printf("CPF (Somente números) ->");
                         scanf("%i", &cpf);
@@ -92,7 +96,13 @@ int main(){
                     break;
 
                     case 2:
+                        printf("INSIRA OS DADOS PARA ADICIONAR UM NOVO PRODUTO!\n");
+                        
+                        printf("Descrição ->");
+                        scanf("%s",descrição_produto);
 
+                        printf("Preço ->");
+                        scanf("%f", &valor_individual);
                     break;
 
                     case 3:
