@@ -61,8 +61,46 @@ int main(){
                     break;
 
                     case 2:
+                    // LISTAGEM DE VENDAS
+                    printf("\nOPÇÕES DE ALTERAÇÃO DE VENDAS:\n");
+                    printf("1 - Editar venda\n");
+                    printf("2 - Deletar venda\n");
+                    printf("7 - Retornar ao início\n");
 
-                    break;
+                    printf("\nEntre com o identificador desejado:");
+                    scanf("%i", &opt);
+
+                    switch (opt)
+                    {
+                    case 1:
+                        printf("INSIRA OS NOVOS DADOS DA VENDA!\n");
+                        printf("Código do vendedor ->");
+                        scanf("%i", &cod_vendedor);
+
+                        printf("Cliente ->");
+                        scanf("%s",cliente);
+
+                        printf("Código do produto ->");
+                        scanf("%i", &cod_produto);
+
+                        printf("Quantidade ->");
+                        scanf("%i", &quantidade);
+
+                        printf("Valor final da venda ->");
+                        scanf("%f", &valor_final);
+                        break;
+
+                    case 2:
+                        printf("Código da venda ->");
+                        scanf("%i", &cod_venda);
+
+                        break;
+                    
+                    default:
+                        break;
+                    }
+
+                        break;
                     
                     case 7:
 
@@ -77,7 +115,8 @@ int main(){
                 printf("\nOPÇÕES DE GERENCIAMENTO ADMINISTRATIVAS:\n");
                 printf("1 - Inserir vendedor\n");
                 printf("2 - Inserir produto\n");
-                printf("3 - Listar todas as vendas\n");
+                printf("3 - Listar vendedores e o valor de suas vendas mensais\n");
+                printf("4 - Listar todas as vendas\n");
                 printf("7 - Retornar ao início\n");
 
                 printf("\nEntre com o identificador desejado:");
@@ -108,6 +147,49 @@ int main(){
                     case 3:
 
                     break;
+
+                    case 4:
+                        // LISTAGEM DE VENDAS
+                        printf("\nOPÇÕES DE ALTERAÇÃO DE VENDAS:\n");
+                        printf("1 - Editar venda\n");
+                        printf("2 - Deletar venda\n");
+                        printf("7 - Retornar ao início\n");
+
+                        printf("\nEntre com o identificador desejado:");
+                        scanf("%i", &opt);
+
+                        switch (opt)
+                        {
+                        case 1:
+                            printf("INSIRA OS NOVOS DADOS DA VENDA!\n");
+                            printf("Código do vendedor ->");
+                            scanf("%i", &cod_vendedor);
+
+                            printf("Cliente ->");
+                            scanf("%s",cliente);
+
+                            printf("Código do produto ->");
+                            scanf("%i", &cod_produto);
+
+                            printf("Quantidade ->");
+                            scanf("%i", &quantidade);
+
+                            printf("Valor final da venda ->");
+                            scanf("%f", &valor_final);
+                            break;
+
+                        case 2:
+                            printf("Código da venda ->");
+                            scanf("%i", &cod_venda);
+
+                            break;
+                        
+                        default:
+                            break;
+                        }
+                            break;
+
+                        break;
                     
                     case 7:
 
