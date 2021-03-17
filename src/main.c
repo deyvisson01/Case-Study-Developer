@@ -3,8 +3,9 @@
 
 int main(){
     // VARIÁVEIS
-    int opt;
-
+    int opt, cod_vendedor, cod_venda, cod_produto, quantidade;
+    float valor_final;
+    char nome_cliente[20];
 
     printf("                                 SISTEMA DE GERENCIAMENTO DE VENDAS           \n"); 
     printf("                                         SEJA BEM-VINDO(A)!                   \n\n");
@@ -32,7 +33,21 @@ int main(){
                 switch (opt)
                 {
                     case 1:
-                    
+                        printf("INSIRA OS DADOS PARA VENDA!\n");
+                        printf("Código do vendedor ->");
+                        scanf("%i", &cod_vendedor);
+
+                        printf("Cliente ->");
+                        scanf("%s", &nome_cliente);
+
+                        printf("Código do produto ->");
+                        scanf("%i", &cod_produto);
+
+                        printf("Quantidade ->");
+                        scanf("%i", &quantidade);
+
+                        printf("Valor final da venda ->");
+                        scanf("%i", &valor_final);
                     break;
 
                     case 2:
