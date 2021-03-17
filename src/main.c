@@ -3,9 +3,15 @@
 
 int main(){
     // VARIÁVEIS
+
+    // VARIÁVEIS DE VENDAS
     int opt, cod_vendedor, cod_venda, cod_produto, quantidade;
     float valor_final;
     char cliente[20];
+
+    // VARIÁVEIS DO VENDEDOR
+    char vendedor[50];
+    int cpf;
 
     printf("                                 SISTEMA DE GERENCIAMENTO DE VENDAS           \n"); 
     printf("                                         SEJA BEM-VINDO(A)!                   \n\n");
@@ -64,6 +70,35 @@ int main(){
             break;
 
             case 2:
+                printf("\nOPÇÕES DE GERENCIAMENTO ADMINISTRATIVAS:\n");
+                printf("1 - Inserir vendedor\n");
+                printf("2 - Inserir produto\n");
+                printf("3 - Listar todas as vendas\n");
+                printf("7 - Retornar ao início\n");
+
+                printf("\nEntre com o identificador desejado:");
+                scanf("%i", &opt);
+                switch (opt)
+                {
+                    case 1:
+
+                    break;
+
+                    case 2:
+
+                    break;
+
+                    case 3:
+
+                    break;
+                    
+                    case 7:
+
+                    break;
+                    
+                    default:
+                        break;
+                }
                 
             break;
             default :
