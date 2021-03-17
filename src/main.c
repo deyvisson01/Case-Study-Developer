@@ -32,6 +32,7 @@ int main(){
 
     switch (opt)
         {
+            // INÍCIO DA ÁREA DO VENDEDOR
             case 1:
                 printf("\nOPÇÕES DE GERENCIAMENTO:\n");
                 printf("1 - Inserir venda\n");
@@ -42,6 +43,7 @@ int main(){
                 scanf("%i", &opt);
                 switch (opt)
                 {
+                    // INÍCIO DA OPÇÃO DE INSERÇÃO DE VENDA - VENDEDOR
                     case 1:
                         printf("INSIRA OS DADOS PARA VENDA!\n");
                         printf("Código do vendedor ->");
@@ -60,6 +62,7 @@ int main(){
                         scanf("%f", &valor_final);
                     break;
 
+                    // INÍCIO DA OPÇÃO DE LISTAGEM DE VENDA - VENDEDOR
                     case 2:
                     // LISTAGEM DE VENDAS
                     printf("\nOPÇÕES DE ALTERAÇÃO DE VENDAS:\n");
@@ -72,6 +75,7 @@ int main(){
 
                     switch (opt)
                     {
+                    // INÍCIO DA OPÇÃO DE EDIÇÃO DE VENDA - VENDEDOR
                     case 1:
                         printf("INSIRA OS NOVOS DADOS DA VENDA!\n");
                         printf("Código do vendedor ->");
@@ -90,6 +94,7 @@ int main(){
                         scanf("%f", &valor_final);
                         break;
 
+                    // INÍCIO DA OPÇÃO DE DELETAR VENDA - VENDEDOR
                     case 2:
                         printf("Código da venda ->");
                         scanf("%i", &cod_venda);
@@ -110,7 +115,7 @@ int main(){
                         break;
                 }
             break;
-
+            // INÍCIO DA ÁREA DO ADMINISTRADOR
             case 2:
                 printf("\nOPÇÕES DE GERENCIAMENTO ADMINISTRATIVAS:\n");
                 printf("1 - Inserir vendedor\n");
@@ -123,6 +128,7 @@ int main(){
                 scanf("%i", &opt);
                 switch (opt)
                 {
+                    // INÍCIO DA OPÇÃO DE INSERIR VENDEDOR
                     case 1:
                         printf("INSIRA OS DADOS PARA ADICIONAR UM NOVO VENDEDOR!\n");
                         
@@ -134,6 +140,7 @@ int main(){
 
                     break;
 
+                    // INÍCIO DA OPÇÃO DE INSERIR PRODUTO
                     case 2:
                         printf("INSIRA OS DADOS PARA ADICIONAR UM NOVO PRODUTO!\n");
                         
@@ -147,7 +154,7 @@ int main(){
                     case 3:
 
                     break;
-
+                    // INÍCIO DA OPÇÃO DE LISTAGEM DE VENDA - ADMINISTRADOR
                     case 4:
                         // LISTAGEM DE VENDAS
                         printf("\nOPÇÕES DE ALTERAÇÃO DE VENDAS:\n");
@@ -160,6 +167,7 @@ int main(){
 
                         switch (opt)
                         {
+                        // INÍCIO DA OPÇÃO DE EDIÇÃO DE VENDA - VENDEDOR
                         case 1:
                             printf("INSIRA OS NOVOS DADOS DA VENDA!\n");
                             printf("Código do vendedor ->");
@@ -178,6 +186,7 @@ int main(){
                             scanf("%f", &valor_final);
                             break;
 
+                        // INÍCIO DA OPÇÃO DE DELETAR VENDA - ADMINISTRADOR
                         case 2:
                             printf("Código da venda ->");
                             scanf("%i", &cod_venda);
@@ -200,6 +209,7 @@ int main(){
                 }
                 
             break;
+            // FIM DA ÁREA DO ADMINISTRADOR
             default :
                 printf ("ERROR: ENTRADA INVÁLIDA!\n");
         }
