@@ -2,8 +2,6 @@
 #include <stdlib.h>
 
 int main(){
-    // VARIÁVEIS
-
     // VARIÁVEIS DE VENDAS
     int opt, cod_vendedor, cod_venda, cod_produto, quantidade;
     float valor_final;
@@ -65,45 +63,45 @@ int main(){
                     // INÍCIO DA OPÇÃO DE LISTAGEM DE VENDA - VENDEDOR
                     case 2:
                     // LISTAGEM DE VENDAS
-                    printf("\nOPÇÕES DE ALTERAÇÃO DE VENDAS:\n");
-                    printf("1 - Editar venda\n");
-                    printf("2 - Deletar venda\n");
-                    printf("7 - Retornar ao início\n");
+                        printf("\nOPÇÕES DE ALTERAÇÃO DE VENDAS:\n");
+                        printf("1 - Editar venda\n");
+                        printf("2 - Deletar venda\n");
+                        printf("7 - Retornar ao início\n");
 
-                    printf("\nEntre com o identificador desejado:");
-                    scanf("%i", &opt);
+                        printf("\nEntre com o identificador desejado:");
+                        scanf("%i", &opt);
 
-                    switch (opt)
-                    {
-                    // INÍCIO DA OPÇÃO DE EDIÇÃO DE VENDA - VENDEDOR
-                    case 1:
-                        printf("INSIRA OS NOVOS DADOS DA VENDA!\n");
-                        printf("Código do vendedor ->");
-                        scanf("%i", &cod_vendedor);
+                        switch (opt)
+                        {
+                        // INÍCIO DA OPÇÃO DE EDIÇÃO DE VENDA - VENDEDOR
+                        case 1:
+                            printf("INSIRA OS NOVOS DADOS DA VENDA!\n");
+                            printf("Código do vendedor ->");
+                            scanf("%i", &cod_vendedor);
 
-                        printf("Cliente ->");
-                        scanf("%s",cliente);
+                            printf("Cliente ->");
+                            scanf("%s",cliente);
 
-                        printf("Código do produto ->");
-                        scanf("%i", &cod_produto);
+                            printf("Código do produto ->");
+                            scanf("%i", &cod_produto);
 
-                        printf("Quantidade ->");
-                        scanf("%i", &quantidade);
+                            printf("Quantidade ->");
+                            scanf("%i", &quantidade);
 
-                        printf("Valor final da venda ->");
-                        scanf("%f", &valor_final);
+                            printf("Valor final da venda ->");
+                            scanf("%f", &valor_final);
+                            break;
+
+                        // INÍCIO DA OPÇÃO DE DELETAR VENDA - VENDEDOR
+                        case 2:
+                            printf("Código da venda ->");
+                            scanf("%i", &cod_venda);
                         break;
-
-                    // INÍCIO DA OPÇÃO DE DELETAR VENDA - VENDEDOR
-                    case 2:
-                        printf("Código da venda ->");
-                        scanf("%i", &cod_venda);
-
-                        break;
-                    
-                    default:
-                        break;
-                    }
+                        
+                        default:
+                            printf ("ERROR: ENTRADA INVÁLIDA!\n");
+                            break;
+                        }
 
                         break;
                     
@@ -112,7 +110,8 @@ int main(){
                     break;
                     
                     default:
-                        break;
+                        printf ("ERROR: ENTRADA INVÁLIDA!\n");
+                    break;
                 }
             break;
             // INÍCIO DA ÁREA DO ADMINISTRADOR
@@ -190,22 +189,23 @@ int main(){
                         case 2:
                             printf("Código da venda ->");
                             scanf("%i", &cod_venda);
-
-                            break;
+                        break;
                         
                         default:
+                            printf ("ERROR: ENTRADA INVÁLIDA!\n");
                             break;
                         }
-                            break;
-
                         break;
+
+                    break;
                     
                     case 7:
 
                     break;
                     
                     default:
-                        break;
+                        printf ("ERROR: ENTRADA INVÁLIDA!\n");
+                    break;
                 }
                 
             break;
