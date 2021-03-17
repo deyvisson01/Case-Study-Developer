@@ -81,6 +81,13 @@ int main(){
                 switch (opt)
                 {
                     case 1:
+                        printf("INSIRA OS DADOS PARA ADICIONAR UM NOVO VENDEDOR!\n");
+                        
+                        printf("Nome ->");
+                        scanf("%s",vendedor);
+
+                        printf("CPF (Somente números) ->");
+                        scanf("%i", &cpf);
 
                     break;
 
