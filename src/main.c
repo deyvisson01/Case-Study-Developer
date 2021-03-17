@@ -5,7 +5,7 @@ int main(){
     // VARIÁVEIS
     int opt, cod_vendedor, cod_venda, cod_produto, quantidade;
     float valor_final;
-    char nome_cliente[20];
+    char cliente[20];
 
     printf("                                 SISTEMA DE GERENCIAMENTO DE VENDAS           \n"); 
     printf("                                         SEJA BEM-VINDO(A)!                   \n\n");
@@ -38,7 +38,7 @@ int main(){
                         scanf("%i", &cod_vendedor);
 
                         printf("Cliente ->");
-                        scanf("%s", &nome_cliente);
+                        scanf("%s",cliente);
 
                         printf("Código do produto ->");
                         scanf("%i", &cod_produto);
@@ -47,7 +47,7 @@ int main(){
                         scanf("%i", &quantidade);
 
                         printf("Valor final da venda ->");
-                        scanf("%i", &valor_final);
+                        scanf("%f", &valor_final);
                     break;
 
                     case 2:
