@@ -1,18 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(){
     // VARIÁVEIS DE VENDAS
-    int opt, cod_vendedor, cod_venda, cod_produto, quantidade;
+    int opt, cod_vendedor, cod_venda, cod_produto, quantidade, aux;
     float valor_final;
     char cliente[20];
 
     // VARIÁVEIS DO VENDEDOR
-    char vendedor[50];
-    int cpf;
+    char codigo_vendedor[] = "111";
+    char vendedor[50]; 
+    char cpf[12];
     
     // VARIÁVEIS DO PRODUTO
-    char descrição_produto[50];
+    char descricao_produto[50];
     float valor_individual;
 
     printf("                                 SISTEMA DE GERENCIAMENTO DE VENDAS           \n"); 
@@ -132,10 +134,12 @@ int main(){
                         printf("INSIRA OS DADOS PARA ADICIONAR UM NOVO VENDEDOR!\n");
                         
                         printf("Nome ->");
-                        scanf("%s",descrição_produto);
+                        scanf("%s", vendedor);
 
                         printf("CPF (Somente números) ->");
-                        scanf("%i", &cpf);
+                        scanf("%s", cpf);
+
+                        InsertSeller(vendedor, cpf);
 
                     break;
 
@@ -144,7 +148,9 @@ int main(){
                         printf("INSIRA OS DADOS PARA ADICIONAR UM NOVO PRODUTO!\n");
                         
                         printf("Descrição ->");
-                        scanf("%s",descrição_produto);
+                        scanf("%s",descricao_produto);
+
+                        free(scanf);
 
                         printf("Preço ->");
                         scanf("%f", &valor_individual);
@@ -213,4 +219,44 @@ int main(){
             default :
                 printf ("ERROR: ENTRADA INVÁLIDA!\n");
         }
+
+
 }
+
+    //MÉTODOS
+    void InsertSeller(char *nome_vendedor, char *cpf){
+        char vendedor[100];
+        char codigo[5];
+        FILE *sellers;
+            char text[200], letra = '\n';
+            int vezes;
+            sellers = fopen("sellers/sellers.txt","r");
+            fread (&text, sizeof(char), 200, sellers);
+            for (int i = 0; i < strlen(text); i++){
+                if(text[i] == letra){
+                    vezes++;
+                }
+            }
+            vezes = vezes-2;
+            fclose(sellers);
+
+        sprintf(codigo, "%d", vezes);
+        strcat(vendedor, codigo);
+        strcat(vendedor, ",");
+        strcat(vendedor, nome_vendedor);
+        strcat(vendedor, ",");
+        strcat(vendedor, cpf);
+        strcat(vendedor, "\n");
+
+
+        sellers = fopen("sellers/sellers.txt", "a");
+            if(sellers == NULL)
+            {
+                printf("Erro na abertura do arquivo!");
+                return 1;
+            }
+        fprintf(sellers, "%s", vendedor);
+        fclose(sellers);
+
+        printf("Vendedor adicionado!\n");
+    }
