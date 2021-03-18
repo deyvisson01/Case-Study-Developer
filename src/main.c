@@ -9,13 +9,12 @@ int main(){
     char cliente[20];
 
     // VARIÁVEIS DO VENDEDOR
-    char codigo_vendedor[] = "111";
     char vendedor[50]; 
     char cpf[12];
     
     // VARIÁVEIS DO PRODUTO
     char descricao_produto[50];
-    float valor_individual;
+    char valor_individual[10];
 
     printf("                                 SISTEMA DE GERENCIAMENTO DE VENDAS           \n"); 
     printf("                                         SEJA BEM-VINDO(A)!                   \n\n");
@@ -150,13 +149,14 @@ int main(){
                         printf("Descrição ->");
                         scanf("%s",descricao_produto);
 
-                        free(scanf);
-
                         printf("Preço ->");
-                        scanf("%f", &valor_individual);
+                        scanf("%s", valor_individual);
+
+                        InsertProducts(descricao_produto, valor_individual);
                     break;
 
                     case 3:
+                        ReadSellers();
 
                     break;
                     // INÍCIO DA OPÇÃO DE LISTAGEM DE VENDA - ADMINISTRADOR
@@ -232,6 +232,7 @@ int main(){
             int vezes;
             sellers = fopen("sellers/sellers.txt","r");
             fread (&text, sizeof(char), 200, sellers);
+
             for (int i = 0; i < strlen(text); i++){
                 if(text[i] == letra){
                     vezes++;
@@ -242,9 +243,9 @@ int main(){
 
         sprintf(codigo, "%d", vezes);
         strcat(vendedor, codigo);
-        strcat(vendedor, ",");
+        strcat(vendedor, ";");
         strcat(vendedor, nome_vendedor);
-        strcat(vendedor, ",");
+        strcat(vendedor, ";");
         strcat(vendedor, cpf);
         strcat(vendedor, "\n");
 
@@ -253,10 +254,56 @@ int main(){
             if(sellers == NULL)
             {
                 printf("Erro na abertura do arquivo!");
-                return 1;
             }
         fprintf(sellers, "%s", vendedor);
         fclose(sellers);
 
         printf("Vendedor adicionado!\n");
+    }
+
+    void ReadSellers(){
+        char line[200];
+        FILE *sellers;
+        sellers = fopen("sellers/sellers.txt","r");
+        fread (&line, sizeof(char), 200, sellers);
+        printf("%s", line);
+
+        fclose(sellers);
+    }
+
+    void InsertProducts(char *descricao_produto, char *valor_individual){
+        char product[100];
+        char codigo[5];
+        FILE *products;
+            char text[200], letra = '\n';
+            int vezes;
+            products = fopen("products/products.txt","r");
+            fread (&text, sizeof(char), 200, products);
+
+            for (int i = 0; i < strlen(text); i++){
+                if(text[i] == letra){
+                    vezes++;
+                }
+            }
+            vezes = vezes-2;
+            fclose(products);
+
+        sprintf(codigo, "%d", vezes);
+        strcat(product, codigo);
+        strcat(product, ";");
+        strcat(product, descricao_produto);
+        strcat(product, ";");
+        strcat(product, valor_individual);
+        strcat(product, "\n");
+
+
+        products = fopen("products/products.txt", "a");
+            if(products == NULL)
+            {
+                printf("Erro na abertura do arquivo!");
+            }
+        fprintf(products, "%s", product);
+        fclose(products);
+
+        printf("Produto adicionado!\n");
     }
