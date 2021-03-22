@@ -307,3 +307,55 @@ int main(){
 
         printf("Produto adicionado!\n");
     }
+
+    void InsertSale(char *codigo_vendedor, char *codigo_produto, char *cliente, char *valor_final){
+        char sale[100];
+        char codigo[5];
+        FILE *sales;
+         char text[200], letra = '\n';
+            int vezes;
+            sales = fopen("sales/sales.txt","r");
+            fread (&text, sizeof(char), 200, sale);
+
+            for (int i = 0; i < strlen(text); i++){
+                if(text[i] == letra){
+                    vezes++;
+                }
+            }
+            vezes = vezes-2;
+            fclose(sales);
+
+            sprintf(codigo, "%d", vezes);
+        strcat(sale, codigo);
+        strcat(sale, ";");
+        strcat(sale, codigo_vendedor);
+        strcat(sale, ";");
+        strcat(sale, codigo_produto);
+        strcat(sale, "\n");
+        strcat(sale, cliente);
+        strcat(sale, "\n");
+        strcat(sale, valor_final);
+        strcat(sale, "\n");
+
+
+        sales = fopen("sales/sales.txt", "a");
+            if(sales == NULL)
+            {
+                printf("Erro na abertura do arquivo!");
+            }
+        fprintf(sales, "%s", sale);
+        fclose(sales);
+
+        printf("Venda adicionada!\n");
+    }
+
+    void verifySeller(char *cod_seller){
+        FILE *saller;
+         char text[200], letra = '\n';
+            int vezes;
+            saller = fopen("sales/sales.txt","r");
+            fread (&text, sizeof(char), 200, saller);
+
+            
+            fclose(saller);
+    }
